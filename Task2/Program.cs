@@ -7,30 +7,29 @@
 Console.WriteLine("Введите число:");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int SearchDigit(int ThirdDigit)
+int SearchDigit(int thirdDigit)
 {
-int CalcOne = number / 100;
+ int calcOne = number / 100;
     if (number < 100)
     {
     Console.WriteLine($"У числа {number} третьей цифры нет");
     }
       if (100 < number && number < 1000)
       {
-      ThirdDigit = number % 10;
-      return ThirdDigit;
+      thirdDigit = number % 10;
       }
         if (1000 < number && number < 10000) 
-         {
-          ThirdDigit = number % 10;
-          return ThirdDigit;
-         }
+          {
+          thirdDigit = number % 10;
+          }
            if (100000 > number && number > 10000)
             {
-             ThirdDigit = CalcOne % 10;
-             return ThirdDigit;
+            thirdDigit = calcOne % 10;
+            return thirdDigit;
             }
+return thirdDigit;
 }
-int digit = SearchDigit(ThirdDigit);
-Console.WriteLine($"Третья цифра числа {number}:{digit}(number)");
+int digit = SearchDigit(number);
+Console.WriteLine($"Третья цифра числа {number}:{digit}");
 
 
